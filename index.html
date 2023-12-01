@@ -8,13 +8,14 @@
 <body>
     <div id="allINP">
         <input id="pp-input" type="file" accept="image/jpeg, image/png, image/jpg" >
-        <input class="Input" type="text" id="Nom">
-        <input class="Input" type="text" id="Prénom">
-        <input class="Input" type="text" id="Age">
-        <input class="Input" type="text" id="Sexe">
-        <input class="Input" type="text" id="Fim">
-        <input class="Input" type="text" id="Niveaudaccréditation">
-         <button id="downloadButton"></button> 
+        <input class="Input" type="text" id="Nom" placeholder="Nom">
+        <input class="Input" type="text" id="Prénom" placeholder="Prénom">
+        <input class="Input" type="text" id="Age" placeholder="Age">
+        <input class="Input" type="text" id="Sexe" placeholder="Sexe">
+        <input class="Input" type="text" id="Fim" placeholder="Fim">
+        <button id="fimBtn">Site ou Fim</button>
+        <input class="Input" type="text" id="Niveaudaccréditation" placeholder="Niveaud a'ccréditation">
+         <button id="downloadButton">carte fini !</button> 
     </div>
       <div id="card">
           <img src="SCP.png" alt="" id="logo">
@@ -22,10 +23,10 @@
           <id id="barUp"></id>
           <div id="grid">
               <h1 class="content">Nom: <span id="addName"></span></h1>
-              <h1 class="content">Prénom: <span id="addPRé"></span></h1>
+              <h1 class="content">Prénom:<span id="addPRé"></span></h1>
               <h1 class="content">Age: <span id="addAge"></span></h1>
               <h1 class="content">Sexe: <span id="addSexe"></span></h1>
-              <h1 class="content">Fim: <span id="addFim"></span></h1>
+              <h1 id="fimSite" class="content">Fim: <span id="addFim"></span></h1>
               <h1 class="content">Niveau d’accréditation: <span id="addNDA"></span></h1>
           </div>
           <img src="pp.png" id="pp" alt="">
@@ -34,6 +35,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
   <script>
+    let fimorSite = true
     let cards = document.getElementById("card")
     downloadButton.addEventListener("click", () => {
       html2canvas(cards)
@@ -56,7 +58,15 @@
           addNDA.textContent = Niveaudaccréditation.value;
       }, 100);
 
-
+      fimBtn.addEventListener("click", () => {
+        if(fimorSite == true){
+          fimSite.innerHTML = 'Site: <span id="addFim"></span>'
+          fimorSite = false
+        }else if(fimorSite == false){
+          fimSite.innerHTML = 'Fim: <span id="addFim"></span>'
+          fimorSite = true
+        }
+      })
   </script>
 
 </body>
