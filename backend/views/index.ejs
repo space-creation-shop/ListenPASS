@@ -22,12 +22,12 @@
           <h1 id="title">Fondation SCP</h1>
           <id id="barUp"></id>
           <div id="grid">
-              <h1 class="content">Nom: <span id="addName"></span></h1>
+              <h1 class="content">Nom : <span id="addName"></span></h1>
               <h1 class="content">Prénom:<span id="addPRé"></span></h1>
-              <h1 class="content">Age: <span id="addAge"></span></h1>
-              <h1 class="content">Sexe: <span id="addSexe"></span></h1>
-              <h1 id="fimSite" class="content">Fim: <span id="addFim"></span></h1>
-              <h1 class="content">Niveau d’accréditation: <span id="addNDA"></span></h1>
+              <h1 class="content">Age : <span id="addAge"></span></h1>
+              <h1 class="content">Sexe : <span id="addSexe"></span></h1>
+              <h1 id="fimSite" class="content">Fim : <span id="addFim"></span></h1>
+              <h1 class="content">Niveau d’accréditation : <span id="addNDA"></span></h1>
           </div>
           <img src="pp.png" id="pp" alt="">
           <id id="barDown"></id>
@@ -52,7 +52,7 @@
       setInterval(() => {
           addName.textContent = Nom.value;
           addPRé.textContent = Prénom.value;
-          addAge.textContent = Age.value;
+          addAge.textContent = Age.value+" ans ";
           addSexe.textContent = Sexe.value;
           addFim.textContent = Fim.value;
           addNDA.textContent = Niveaudaccréditation.value;
@@ -60,10 +60,10 @@
 
       fimBtn.addEventListener("click", () => {
         if(fimorSite == true){
-          fimSite.innerHTML = 'Site: <span id="addFim"></span>'
+          fimSite.innerHTML = 'Site : <span id="addFim"></span>'
           fimorSite = false
         }else if(fimorSite == false){
-          fimSite.innerHTML = 'Fim: <span id="addFim"></span>'
+          fimSite.innerHTML = 'Fim : <span id="addFim"></span>'
           fimorSite = true
         }
       })
