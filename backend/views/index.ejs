@@ -10,6 +10,7 @@
         <input id="pp-input" type="file" accept="image/jpeg, image/png, image/jpg" >
         <input class="Input" type="text" id="Nom" placeholder="Nom">
         <input class="Input" type="text" id="Prénom" placeholder="Prénom">
+        <input class="Input" type="text" id="sign" placeholder="sign">
         <input class="Input" type="text" id="Age" placeholder="Age">
         <input class="Input" type="text" id="Sexe" placeholder="Sexe">
         <input class="Input" type="text" id="Fim" placeholder="Fim">
@@ -23,7 +24,8 @@
           <id id="barUp"></id>
           <div id="grid">
               <h1 class="content">Nom : <span id="addName"></span></h1>
-              <h1 class="content">Prénom:<span id="addPRé"></span></h1>
+              <h1 class="content">Prénom : <span id="addPRé"></span></h1>
+              <h1 class="content">callsign : <span id="addsign"></span></h1>
               <h1 class="content">Age : <span id="addAge"></span></h1>
               <h1 class="content">Sexe : <span id="addSexe"></span></h1>
               <h1 id="fimSite" class="content">Fim : <span id="addFim"></span></h1>
@@ -51,6 +53,7 @@
     })
       setInterval(() => {
           addName.textContent = Nom.value;
+          addsign.textContent=sign.value
           addPRé.textContent = Prénom.value;
           addAge.textContent = Age.value+" ans ";
           addSexe.textContent = Sexe.value;
